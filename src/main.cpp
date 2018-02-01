@@ -3,9 +3,14 @@
 int main() {
     AnalogIn  left(A0);
     AnalogIn right(A1);
+    float leftVolt, rightVolt;
+
     while(1) {
-        printf(" Left dial %f \n",  left.read() );
-        printf("Right dial %f \n", right.read() );
+      leftVolt = 3.3*(left.read());
+      rightVolt = 3.3*(right.read());
+      
+        printf(" Left dial %f \n",  leftVolt );
+        printf("Right dial %f \n", rightVolt );
         wait( 1.0 );
     }
 }
